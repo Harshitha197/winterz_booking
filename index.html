@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winterz Booking</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winterz Booking - Travel in Style</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #4285f4;
+            --accent-color: #f39c12;
+            --dark-color: #34495e;
+            --light-color: #f8f9fa;
+            --border-radius: 8px;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 8px 0;
+        }
+        
+        .container-fluid {
+            padding: 0 20px;
+        }
+        
+        .navbar-brand {
+            margin-right: 15px;
+        }
+        .navbar-brand img {
+        height: 125px;
+        width: auto; 
+        transition: transform 0.2s;
+        }
+
+        
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+        
+        .search-container {
+            position: relative;
+            width: 300px;
+            margin-right: 15px;
+        }
+        
+        .search-input {
+            border-radius: var(--border-radius);
+            border: 1px solid #e0e0e0;
+            padding: 8px 40px 8px 15px;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            background-color: #f5f7fa;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+            background-color: white;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5f6368;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        
+        .nav-item {
+            margin: 0 2px;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            transition: all 0.2s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(66, 133, 244, 0.08);
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+        
+        .nav-icon {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            padding: 8px;
+            margin-top: 10px;
+        }
+        
+        .dropdown-item {
+            border-radius: var(--border-radius);
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(66, 133, 244, 0.08);
+            color: var(--primary-color);
+        }
+        
+        .cart-icon {
+            position: relative;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin-right: 12px;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        
+        .cart-icon:hover {
+            background-color: rgba(66, 133, 244, 0.08);
+            color: var(--primary-color);
+        }
+        
+        /* .cart-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 600;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        } */
+
+        .cart-badge {
+            content: "";  /* Removes the number */
+            font-size: 0; /* Ensures text is not visible */
+        }
+        
+        .auth-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+        }
+        
+        .auth-button:hover {
+            background-color: #0d62d0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .navbar-toggler {
+                border: none;
+                padding: 6px;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+            
+            .navbar-toggler-icon {
+                width: 1.2em;
+                height: 1.2em;
+            }
+            
+            .navbar-collapse {
+                margin-top: 10px;
+            }
+            
+            .auth-button {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .cart-icon {
+                padding: 8px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/logo.jpeg" alt="Winterz Booking">
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container d-none d-lg-block">
+            <input type="text" class="search-input" placeholder="Where would you like to go?">
+            <button class="search-icon">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Mobile Search Bar -->
+            <div class="search-container d-lg-none">
+                <input type="text" class="search-input" placeholder="Where would you like to go?">
+                <button class="search-icon">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="fas fa-home nav-icon"></i>Home
+                    </a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="destinationsDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-map-marker-alt nav-icon"></i>Destinations
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">By Country</a></li>
+                        <li><a class="dropdown-item" href="#">By Region</a></li>
+                        <li><a class="dropdown-item" href="#">By Interest</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="toursDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-suitcase nav-icon"></i>Tours & Packages
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Adventure Tours</a></li>
+                        <li><a class="dropdown-item" href="#">Family Vacations</a></li>
+                        <li><a class="dropdown-item" href="#">Honeymoon Packages</a></li>
+                        <li><a class="dropdown-item" href="#">Budget Trips</a></li>
+                        <li><a class="dropdown-item" href="#">Luxury Travel</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="flightsDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-plane nav-icon"></i>Flights & Transport
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Flight Booking</a></li>
+                        <li><a class="dropdown-item" href="#">Train & Bus</a></li>
+                        <li><a class="dropdown-item" href="#">Car Rentals</a></li>
+                        <li><a class="dropdown-item" href="#">Cruises</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="hotelsDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-hotel nav-icon"></i>Hotels & Stays
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Hotels</a></li>
+                        <li><a class="dropdown-item" href="#">Resorts</a></li>
+                        <li><a class="dropdown-item" href="#">Homestays</a></li>
+                        <li><a class="dropdown-item" href="#">Hostels</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="Experiences" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe nav-icon"></i>Experiences
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Local Attractions</a></li>
+                        <li><a class="dropdown-item" href="#">Cultural Tours</a></li>
+                        <li><a class="dropdown-item" href="#">Food & Wine Tours</a></li>
+                        <li><a class="dropdown-item" href="#">Wildlife & Safari</a></li>
+                        <li><a class="dropdown-item" href="#">Water Sports & Adventure </a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-ellipsis-h nav-icon"></i>More
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Travel Guides</a></li>
+                        <li><a class="dropdown-item" href="#">Deals & Offers</a></li>
+                        <li><a class="dropdown-item" href="#">FAQs & Support</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="ms-auto d-flex align-items-center">
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                
+                
+                    <a href="/accounts/login/" class="auth-button">
+                        <i class="fas fa-sign-in-alt"></i>Login
+                    </a>
+                    <a href="/accounts/signup/" class="auth-button">
+                        <i class="fas fa-user-plus"></i>Sign Up
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+    <!-- Dynamic Content (Each Page Content Here) -->
+    <div class="container mt-4">
+        
+<div class="container text-center mt-5">
+    <h1 class="display-4 fw-bold">Welcome to Winterz Booking</h1>
+    <p class="lead">Find the best destinations, hotels, and tours tailored for you.</p>
+
+    <!-- User Authentication Section -->
+    <!-- <div class="mb-4">
+        
+            <a href="/accounts/login/" class="btn btn-primary">Login</a>
+            <a href="/accounts/signup/" class="btn btn-success">Sign Up</a>
+        
+    </div> -->
+
+    <!-- Search Bar -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form action="/search/" method="GET" class="input-group">
+                <input type="text" class="form-control" name="query" placeholder="Search for destinations, hotels, or tours..." required>
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Featured Destinations Section -->
+    <section class="mt-5">
+        <h2 class="mb-4">Featured Destinations</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="/static/images/bali.jpeg" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <h5 class="card-title">Bali, Indonesia</h5>
+                        <p class="card-text">Explore tropical beaches, rich culture, and scenic landscapes.</p>
+                        <a href="#" class="btn btn-outline-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="/static/images/paris.jpg" class="card-img-top" alt="Paris">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris, France</h5>
+                        <p class="card-text">Experience the romance, history, and charm of Paris.</p>
+                        <a href="#" class="btn btn-outline-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="/static/images/tokyo.jpeg" class="card-img-top" alt="Tokyo">
+                    <div class="card-body">
+                        <h5 class="card-title">Tokyo, Japan</h5>
+                        <p class="card-text">Discover a blend of traditional and modern culture in Tokyo.</p>
+                        <a href="#" class="btn btn-outline-primary">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="mt-5">
+        <h2 class="mb-4">Popular Travel Categories</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center p-3">
+                    <h5>Adventure Tours</h5>
+                    <p>Thrilling experiences in nature.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center p-3">
+                    <h5>Luxury Travel</h5>
+                    <p>5-star hotels and premium experiences.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center p-3">
+                    <h5>Family Vacations</h5>
+                    <p>Fun trips for all ages.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center p-3">
+                    <h5>Budget Trips</h5>
+                    <p>Affordable and memorable journeys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mt-5 bg-light py-4">
+        <h2>Ready for Your Next Adventure?</h2>
+        <p>Book your dream vacation now with Winterz Booking.</p>
+        <a href="#" class="btn btn-lg btn-primary">Start Booking</a>
+    </section>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Site Title</title>
+    <!-- Include your CSS files -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <!-- Your header content -->
+        <nav>
+            <!-- Navigation items -->
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Page content will be inserted here -->
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <style>
+            footer {
+                background-color: #222;
+                color: white;
+                padding: 20px 0;
+                text-align: center;
+            }
+            .footer-container {
+                max-width: 1200px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            .footer-section {
+                flex: 1;
+                margin: 10px;
+                min-width: 200px;
+            }
+            .footer-section h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #f8f8f8;
+            }
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+            .footer-section ul li {
+                margin: 5px 0;
+            }
+            .footer-section ul li a {
+                color: #ccc;
+                text-decoration: none;
+            }
+            .footer-section ul li a:hover {
+                color: white;
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .social-icons a {
+                margin: 0 10px;
+                color: white;
+                font-size: 20px;
+            }
+            .payment-icons img {
+                width: 50px;
+                margin: 5px;
+            }
+        </style>
+        
+        <div class="footer-container">
+            <!-- Company Information -->
+            <div class="footer-section">
+                <h3>Company Information</h3>
+                <ul>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/refund/">Refund Policy</a></li>
+                    <li><a href="/faq/">FAQs</a></li>
+                    <li><a href="/support/">Customer Support</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div class="footer-section">
+                <h3>Payment Methods</h3>
+                <div class="payment-icons">
+                    <img src="/static/images/visa.png" alt="Visa">
+                    <img src="/static/images/mastercard.png" alt="Mastercard">
+                    <img src="/static/images/upi.png" alt="UPI">
+                    <img src="/static/images/wallets.png" alt="Wallets">
+                    <img src="/static/images/simplepay.png" alt="Simple Pay">
+                    <img src="/static/images/lazypay.png" alt="Lazy Pay">
+                    <img src="/static/images/cod.png" alt="Cash on Delivery">
+                </div>
+            </div>
+            
+            <!-- Customer Support -->
+            <div class="footer-section">
+                <h3>Customer Support</h3>
+                <p>Phone: +91 98xxx-xxxxx</p>
+                <p>Email: support@cypwng.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a1b2c3d4e5.js" crossorigin="anonymous"></script>
+    
+    <!-- Include your JS files -->
+    <script src="/static/js/main.js"></script>
+    
+</body>
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
